@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppings', sans-serif;
+}
+.container
+{
+		position:relative;
+		display: flex;
+		flex-wrap:wrap;
+		width:1100px;
+}
+
+.container .icon
+{
+	position:relative;
+	width:50%;
+	text-align:center;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	flex wrap: wrap;
+}
+.container .icon .iconBx
+{
+	position:relative;
+	width:calc(50% - 40px);
+	margin: 0 30px 30px 0;
+	padding: 0 25px;
+	height:140px;
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	flex-wrap:wrap;
+}
+.container .icon .iconBx img{
+max-width: 100%;
+}

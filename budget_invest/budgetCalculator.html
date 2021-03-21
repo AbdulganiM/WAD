@@ -1,0 +1,183 @@
+<html>
+<head>
+	<title>Investment Calculator</title>
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" type = "text/css" href ="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+	</div>
+	<div>
+	<h3 style ="float:center;"  class ="wow">Budget Calculator</h3>
+	</div>
+<br>
+<br>
+	<script type=""text/javascript"
+	 src="https://www.gstatic.com/charts/loader.js"></script>
+
+  </head>
+<body>
+<div class="container">
+        <input type="checkbox" id="check">
+        <label for="check" class="open"><i class="fas fa-bars"></i></label>
+        <div class="sidebar-wrapper">
+            <div class="sidebar">
+                <div class="avatar-wrapper">
+                    <label for="check" class="close"><i class="fas fa-times"></i></label>
+                   <img class="avatar" src="D:\budget_invest/wad.jpg" alt="avatar">
+                   <p class="userName">Wad</p>
+                </div>
+                <nav>
+                    <ul class="menu">
+                        <li><a href="file:///D:/budget_invest/FinancialPlanner.html#"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="file:///D:/budget_invest/budgetCalculator.html#"><i class="fas fa-download"></i> Budget Calculator</a></li>
+                        <li><a href="file:///D:/budget_invest/results.html#"><i class="fas fa-gift"></i> Investment Calculator</a></li>
+                        <li><a href="#"><i class="fas fa-trophy"></i> About Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+	
+<label class="custom-field one">
+  <input type="text" id="income"required/>
+  <span class="placeholder">Enter Your Income</span>
+</label>
+<label class="custom-field one">
+  <input type="text" id= "rent"required/>
+  <span class="placeholder">Enter Your Rent/Mortgage</span>
+</label>
+
+<label class="custom-field one">
+  <input type="text" id ="Utility"required/>
+  <span class="placeholder">Enter Utilty Expense</span>
+</label>
+
+<label class="custom-field one">
+  <input type="text" id ="Fun"required/>
+  <span class="placeholder">Enter Your Entertainment Expense</span>
+  <span class="border"></span>
+</label>
+
+<label class="custom-field one">
+  <input type="text" id ="Transport"required/>
+  <span class="placeholder">Transportation Cost(Monthly)</span>
+  <span class="border"></span>
+</label>
+<br>
+<center><div class ="wrapper">
+<br><div class ="btn">
+	<button type = "button" onclick = "draw0Chart();draw1Chart()" >Calculate</button>
+	</div>
+</div>
+
+<br>
+<br>
+
+</body>
+<script>
+function nextpage(){
+document.location.href="test.html";
+}
+</script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+	  </script>
+	  
+	 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+	
+      // Load Charts and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Draw the pie chart for Sarah's pizza when Charts is loaded.
+      google.charts.setOnLoadCallback(drawSarahChart);
+
+      // Draw the pie chart for the Anthony's pizza when Charts is loaded.
+      google.charts.setOnLoadCallback(drawAnthonyChart);
+
+      // Callback that draws the pie chart for Sarah's pizza.
+      function draw0Chart() {
+		var income = document.getElementById("income").value*1;
+		var rent = document.getElementById("rent").value*1;
+		var transport = document.getElementById("Transport").value*1;
+		var utility = document.getElementById("Utility").value*1;
+		var fun = document.getElementById("Fun").value*1;
+		var surplus = ((income/12)-(fun+utility+transport+rent));
+		
+        // Create the data table for Sarah's pizza.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Rent/Mortgage', rent],
+          ['Transport', transport],
+          ['Utility', utility ],
+          ['Entertainment', fun],
+		  ['surplus', surplus]
+        ]);
+
+        // Set options for Sarah's pie chart.
+        var options = {title:'Current Spending',
+                       width:600,
+                       height:600};
+
+        // Instantiate and draw the chart for Sarah's pizza.
+        var chart = new google.visualization.PieChart(document.getElementById('Sarah_chart_div'));
+        chart.draw(data, options);
+      }
+
+      // Callback that draws the pie chart for Anthony's pizza.
+      function draw1Chart() {
+	  
+	  var income = document.getElementById("income").value*1;
+		var rent = document.getElementById("rent").value*1;
+		var transport = document.getElementById("Transport").value*1;
+		var utility = document.getElementById("Utility").value*1;
+		var fun = document.getElementById("Fun").value*1;
+		var surplus = ((income/12)-(fun+utility+transport+rent));
+
+        // Create the data table for Anthony's pizza.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Rent/Mortgage', (income)*0.3],
+          ['Transport', (income)*0.15],
+          ['Utility', (income)*0.1 ],
+          ['Entertainment',(income)*0.1 ],
+          ['Savings', (income)*0.2 ],
+		  ['Surplus', (income)*0.15]
+        ]);
+
+        // Set options for Anthony's pie chart.
+        var options = {title:'Recommended Monthly Spending',
+                       width:600,
+                       height:600};
+
+        // Instantiate and draw the chart for Anthony's pizza.
+        var chart = new google.visualization.PieChart(document.getElementById('Anthony_chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <!--Table and divs that hold the pie charts-->
+    <table class="columns">
+      <tr>
+        <td><div id="Sarah_chart_div" style="border: 1px solid #ccc"></div></td>
+        <td><div id="Anthony_chart_div" style="border: 1px solid #ccc"></div></td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+	</script>
+	  
+</html>

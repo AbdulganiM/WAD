@@ -1,0 +1,127 @@
+<doctype html>
+<html>
+<head>
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+	<link rel ="stylesheet" type = "text/css" href = "style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+	<title>Homepage</title>
+	<div id ="sidebar">
+		<div>
+		<center>
+	<h3 style ="float:center;"  class ="wow">Home</h3>
+	</div>
+	</center>
+</head>
+<br>
+<br>
+<br>
+<body>
+
+<div class="container">
+        <input type="checkbox" id="check">
+        <label for="check" class="open"><i class="fas fa-bars"></i></label>
+        <div class="sidebar-wrapper">
+            <div class="sidebar">
+                <div class="avatar-wrapper">
+                    <label for="check" class="close"><i class="fas fa-times"></i></label>
+                   <img class="avatar" src="D:\budget_invest/wad.jpg" alt="avatar">
+                   <p class="userName">Wad</p>
+                </div>
+                <nav>
+                    <ul class="menu">
+                        <li><a href="file:///D:/budget_invest/FinancialPlanner.html#"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="file:///D:/budget_invest/budgetCalculator.html#"><i class="fas fa-download"></i> Budget Calculator</a></li>
+                        <li><a href="file:///D:/budget_invest/results.html#"><i class="fas fa-gift"></i> Investment Calculator</a></li>
+                        <li><a href="file:///D:/budget_invest/FinancialPlanner.html#"><i class="fas fa-trophy"></i> About Us</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<div class="container">
+		<div class="icon">
+			<div class ="iconBx active"data-id="content1">
+				<img src ="wad.jpg">
+			</div>
+			<div class ="iconBx"data-id="content2">
+				<img src ="github.png">
+			</div>
+			<div class ="iconBx" data-id="content3">
+				<img src ="finance.png" >
+			</div>
+			<div class ="iconBx" data-id="content4">
+				<img src ="forbe.png">
+			</div>
+		</div>
+		<div class ="content">
+			<div class="contentBx active" id="content1">
+					<div class= "text">
+					<h2 class ="wow">Wad</h2>
+					<p class ="bodytext">
+					
+					Our first Website: a platform built for the user. 
+					This is an interactive financial planner that allows you 
+					to track your spending and plan investment routes.
+					A simple and Intuitive UI that cuts out all distraction, leaving 
+					the user complete freedom.
+				
+					</p>
+				</div>
+			</div>
+			<div class="contentBx"id="content2">
+					<div class= "text">
+					<h2 class ="wow">GitHub</h2>
+					<p class ="bodytext">
+					Access Our Public Source Code Here
+					
+					</p>
+				</div>
+			</div>
+			<div class="contentBx"id="content3">
+					<div class= "text">
+					<h2 class ="wow" >Google Finance</h2>
+					<p class ="bodytext">
+					Easy Access Source to Google Finance For Additional Resources
+					
+					</p>
+				</div>
+			</div>
+			<div class="contentBx"id="content4">
+					<div class= "text">
+					<h2 class ="wow">Forbes</h2>
+					<p class ="bodytext">
+					Easy Access Source to Forbes
+					
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type ="text/javascript">
+		var iconBx = document.querySelectorAll('.iconBx');
+		var contentBx = document.querySelectorAll('.contentBx');
+		
+		for(var i = 0; i<iconBx.length;i++)
+		{
+		iconBx[i].addEventListener('mouseover', function(){
+			for (var i =0;i<contentBx.length;i++){
+				contentBx[i].className ='contentBx';
+		}
+		document.getElementById(this.dataset.id).className = 'contentBx active'
+		for (var i =0;i<iconBx.length;i++){
+				iconBx[i].className ='iconBx';
+		}
+		this.className='iconBx active';
+		})
+		}
+		function openLink() {
+  window.open("file:///D:/budget_invest/results.html");
+}
+	</script>
+</body>
+
+</html>

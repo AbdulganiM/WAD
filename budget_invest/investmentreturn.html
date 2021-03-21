@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Investment Calculator</title>
+	<link rel="stylesheet" type = "text/css" href ="style.css">
+	<center>
+	<h3 style = "font-size: 32px; "class ="cool">Investment Calculator</h3>
+	</center>
+</head>
+<body>
+<button type ="button" style= "float:left;">Learn More</button>
+<br> 
+<center>
+<label class="custom-field one">
+	<input type ="text" id = "Initial_investment"required/>
+	<span class ="placeholder">Initial Investment</span>
+</label>
+<br><br>
+<label class="custom-field one">
+	<input type ="text" id = "interest_rate"required/>
+	<span class ="placeholder">Interest Rate (Percent)</span>
+</label>
+<br><br>
+<label class="custom-field one">
+	<input type ="text" id = "Years"required/>
+	<span class ="placeholder">Years Since Initial Investment</span>
+</label>
+<div class ="wrapper">
+<br><div class ="btn">
+	<button type = "button" onclick = "openLink()">Calculate</button>
+	</div>
+</div>
+ <br>
+<center>
+</body>
+<script>
+function calculate() {
+var initial = document.getElementById("Initial_investment").value;
+var interest = (document.getElementById("interest_rate").value/100) + 1;
+var years = document.getElementById("Years").value;
+
+document.write((initial)*interest**years);
+}
+
+function openLink() {
+  window.open("file:///D:/budget_invest/results.html");
+}
+</script>
+
+
+
+
+
+
+</html>
